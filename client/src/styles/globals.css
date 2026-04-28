@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* ─── Rantidevs ClientFlow brand tokens ─── */
+  --color-brand: #2A1A4A;          /* deep aubergine */
+  --color-brand-deep: #1B1130;     /* near-black plum */
+  --color-brand-soft: #4A3074;     /* lighter aubergine */
+  --color-coral: #FF5C7A;          /* electric coral */
+  --color-coral-soft: #FFE2E8;
+  --color-gold: #E8C56F;           /* warm gold leaf */
+  --color-gold-deep: #B8923A;
+  --color-naija: #008751;          /* Nigerian flag green */
+  --color-cream: #FBF8F3;          /* warm parchment */
+  --color-ink: #14102A;            /* deep ink text */
+}
+
+:root {
+  --font-size: 16px;
+  --background: #FBF8F3;
+  --foreground: #14102A;
+  --card: #FFFFFF;
+  --card-foreground: #14102A;
+  --popover: #FFFFFF;
+  --popover-foreground: #14102A;
+  --primary: #2A1A4A;
+  --primary-foreground: #FBF8F3;
+  --secondary: #F1ECE3;
+  --secondary-foreground: #2A1A4A;
+  --muted: #EFE9DD;
+  --muted-foreground: #6B5E7A;
+  --accent: #FFE2E8;
+  --accent-foreground: #2A1A4A;
+  --destructive: #DC2A4D;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(42, 26, 74, 0.10);
+  --input: transparent;
+  --ring: #FF5C7A;
+  --chart-1: #2A1A4A;
+  --chart-2: #FF5C7A;
+  --chart-3: #E8C56F;
+  --chart-4: #008751;
+  --chart-5: #4A3074;
+  --radius: 0.875rem;
+}
+
+.dark {
+  --background: #14102A;
+  --foreground: #FBF8F3;
+  --card: #1B1130;
+  --card-foreground: #FBF8F3;
+  --popover: #1B1130;
+  --popover-foreground: #FBF8F3;
+  --primary: #FF5C7A;
+  --primary-foreground: #14102A;
+  --secondary: #251A3F;
+  --secondary-foreground: #FBF8F3;
+  --muted: #251A3F;
+  --muted-foreground: #998BB0;
+  --accent: #2A1A4A;
+  --accent-foreground: #FBF8F3;
+  --destructive: #FF6680;
+  --destructive-foreground: #FFFFFF;
+  --border: #2D1F4A;
+  --input: #2D1F4A;
+  --ring: #FF5C7A;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: var(--font-size);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* ─── Brand utility classes ─── */
+.bg-brand        { background-color: var(--color-brand) !important; }
+.bg-brand-deep   { background-color: var(--color-brand-deep) !important; }
+.bg-brand-soft   { background-color: var(--color-brand-soft) !important; }
+.bg-coral        { background-color: var(--color-coral) !important; }
+.bg-coral-soft   { background-color: var(--color-coral-soft) !important; }
+.bg-gold         { background-color: var(--color-gold) !important; }
+.bg-gold-deep    { background-color: var(--color-gold-deep) !important; }
+.bg-naija        { background-color: var(--color-naija) !important; }
+.bg-cream        { background-color: var(--color-cream) !important; }
+.text-brand      { color: var(--color-brand) !important; }
+.text-coral      { color: var(--color-coral) !important; }
+.text-gold       { color: var(--color-gold) !important; }
+.text-naija      { color: var(--color-naija) !important; }
+.text-ink        { color: var(--color-ink) !important; }
+.border-brand    { border-color: var(--color-brand) !important; }
+.border-coral    { border-color: var(--color-coral) !important; }
+.border-gold     { border-color: var(--color-gold) !important; }
+.ring-coral      { --tw-ring-color: var(--color-coral) !important; }
+
+.bg-brand-gradient {
+  background-image: linear-gradient(135deg, #2A1A4A 0%, #4A3074 50%, #FF5C7A 100%);
+}
+.bg-gold-gradient {
+  background-image: linear-gradient(135deg, #E8C56F 0%, #FF5C7A 100%);
+}
+.text-brand-gradient {
+  background-image: linear-gradient(135deg, #2A1A4A 0%, #FF5C7A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gold-gradient {
+  background-image: linear-gradient(135deg, #E8C56F 0%, #B8923A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft hex/diamond pattern overlay used on hero/cta */
+.bg-hex-pattern {
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(232, 197, 111, 0.10) 0%, transparent 35%),
+    radial-gradient(circle at 80% 75%, rgba(255, 92, 122, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(74, 48, 116, 0.10) 0%, transparent 45%);
+}
+
+.shadow-brand     { box-shadow: 0 18px 38px -16px rgba(42, 26, 74, 0.45); }
+.shadow-coral     { box-shadow: 0 14px 30px -12px rgba(255, 92, 122, 0.55); }
+.shadow-gold      { box-shadow: 0 14px 30px -12px rgba(232, 197, 111, 0.55); }
+
+/* ==============================================
+   LEGACY SLATE/GRAY REMAPS (preserve old code)
+   ============================================== */
+.bg-\[\#F2F4F7\] { background-color: #FBF8F3 !important; }
+.bg-\[\#F8F9FB\] { background-color: #FBF8F3 !important; }
+.bg-slate-900 { background-color: var(--color-brand) !important; }
+.bg-slate-950 { background-color: var(--color-brand-deep) !important; }
+.text-slate-900 { color: var(--color-ink) !important; }
+.hover\:bg-slate-800:hover { background-color: var(--color-brand-soft) !important; }
+
+/* ==============================================
+   DARK MODE OVERRIDES
+   ============================================== */
+.dark .bg-\[\#F2F4F7\],
+.dark .bg-\[\#F8F9FB\] { background-color: #14102A !important; }
+.dark .bg-white        { background-color: #1B1130 !important; }
+.dark .bg-slate-50     { background-color: #251A3F !important; }
+.dark .bg-slate-100    { background-color: #2D1F4A !important; }
+.dark .bg-slate-200    { background-color: #3A2A5A !important; }
+
+.dark .text-slate-900  { color: #FBF8F3 !important; }
+.dark .text-slate-800  { color: #E5DCEF !important; }
+.dark .text-slate-700  { color: #C5B5DB !important; }
+.dark .text-slate-600  { color: #998BB0 !important; }
+
+.dark .hover\:bg-slate-50:hover   { background-color: #251A3F !important; }
+.dark .hover\:bg-slate-100:hover  { background-color: #2D1F4A !important; }
+.dark .hover\:bg-red-50:hover     { background-color: #3A1525 !important; }
+.dark .hover\:text-slate-900:hover { color: #FBF8F3 !important; }
+.dark .hover\:text-red-600:hover  { color: #FF6680 !important; }
+
+.dark .focus\:bg-white:focus      { background-color: #251A3F !important; }
+
+.dark .border-slate-100  { border-color: #2D1F4A !important; }
+.dark .border-slate-200  { border-color: #3A2A5A !important; }
+
+.dark .bg-slate-200.h-8,
+.dark .bg-slate-200.w-\[1px\] { background-color: #3A2A5A !important; }
+
+.dark .shadow-slate-200 {
+  --tw-shadow: 0 10px 15px -3px rgba(0,0,0,0.45), 0 4px 6px -4px rgba(0,0,0,0.45) !important;
+  box-shadow: var(--tw-shadow) !important;
+}
+
+.dark input:not([class*="bg-slate-9"]),
+.dark textarea {
+  background-color: #251A3F !important;
+  color: #FBF8F3 !important;
+  border-color: #3A2A5A !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder { color: #6B5C82 !important; }
+
+.dark .recharts-cartesian-axis-tick-value { fill: #998BB0 !important; }
+.dark .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #1B1130 !important;
+  border-color: #2D1F4A !important;
+  color: #FBF8F3 !important;
+}
+
+.dark ::-webkit-scrollbar-track { background: #14102A; }
+.dark ::-webkit-scrollbar-thumb { background: #3A2A5A; border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #4A3074; }
